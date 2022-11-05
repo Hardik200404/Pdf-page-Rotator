@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
+</head>
+<body>
+    <p>Upload your PDF file here</p>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="file">File:</label>
+        <input type="file" id="file" name="file">
+        <br>
+        <label for="rotation anlge">Rotation Angle:</label>
+        <br>
+        <input type="radio" id="angle" name="angle" value="90">
+        <label for="angle">90</label><br>
+        <input type="radio" id="angle" name="angle" value="180">
+        <label for="angle">180</label><br>
+        <input type="radio" id="angle" name="angle" value="270">
+        <label for="angle">270</label><br>
+        <label for="page no">Page no:</label>
+        <br>
+        <input type="number" id="page_no" name="page_no">
+        <br>
+
+        <button>Upload</button>
+    </form>
+</body>
+</html>
