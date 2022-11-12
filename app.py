@@ -1,4 +1,4 @@
-from flask import Flask,request,render_template
+from flask import Flask,request,render_template,send_file
 from werkzeug.utils import secure_filename
 from script import process_file
 import os
@@ -34,8 +34,10 @@ def create_app():
                 page_no=request.form['page_no']
                 if(angle and page_no):
                     process_file(filename,angle,page_no)
-                    processed_filename=filename[:-4]+'_modified'
-                    return render_template('download.html')
+                    processed_filename=filename[:-4]+'_modified.pdf'
+
+                    #sending the processed file as response to prompt user to download
+                    return send_file(path_or_file=f'C:/Users/uchih/PdfApp/processed/{processed_filename}',as_attachment=True)
                 
                 #incase rotation angle and page number is not provided
                 return 'Pdf Uploaded Successfully'
